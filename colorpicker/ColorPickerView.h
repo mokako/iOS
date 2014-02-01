@@ -4,7 +4,6 @@
 //  I admit the distribution and modified freely.
 
 #import <UIKit/UIKit.h>
-#import "UIViewPlus.h"
 
 @interface ColorPickerView : UIView
 {
