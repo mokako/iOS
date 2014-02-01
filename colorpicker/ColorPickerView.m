@@ -1,10 +1,6 @@
-//
 //  ColorPickerView.m
-//  oekaki01
-//
-//  Created by moca on 2014/01/27.
-//  Copyright (c) 2014年 moca. All rights reserved.
-//
+//  copyleft
+//  I admit the distribution and modified freely.
 
 #import "ColorPickerView.h"
 
@@ -65,16 +61,12 @@
     [alpha addSubview:[self text]];
     [baseView addSubview:alpha];
     [self renderPicker];
-    //表示用
     setColorView = [[UIView alloc]initWithFrame:CGRectMake(20,200,60,60)];
     [setColorView setBackgroundColor:RGBA(0, 0, 0, 0.8)];
     setColorView.tag = 9;
     setColorView.layer.cornerRadius = 5;
     setColorView.clipsToBounds = true;
     [baseView addSubview:setColorView];
-    
-    
-    //筆の太さ
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(100,210,140,40)];
     [line setBackgroundColor:RGBA(250, 250, 250, 0.3)];
     line.tag = 1004;
@@ -184,7 +176,6 @@
     CGContextAddLineToPoint(context, 4, 15);
     CGContextFillPath(context);
     UIImageView *v = [[UIImageView alloc]initWithImage:UIGraphicsGetImageFromCurrentImageContext()];
-    // 描画を終了します。
     UIGraphicsEndImageContext();
     
     [scale addSubview:v];
@@ -211,7 +202,6 @@
     CGContextAddLineToPoint(context, 5, 30);
     CGContextFillPath(context);
     UIImageView *v = [[UIImageView alloc]initWithImage:UIGraphicsGetImageFromCurrentImageContext()];
-    // 描画を終了します。
     UIGraphicsEndImageContext();
     
     [scale addSubview:v];
@@ -222,16 +212,6 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint currentPoint = [[touches anyObject] locationInView:self];
-        //どこのバーが押されたのか調べます。
-    
-    /*
-     
-     この部分の処理が規定の値を大きく超えた値を出しています。
-     
-     
-     
-     */
-    //NSLog(@"y : %f",currentPoint.y);
     if((currentPoint.y - 40) >= 0 && (currentPoint.y - 40) <= 127.5)
     {
         //NSLog(@"x : %f",currentPoint.y);

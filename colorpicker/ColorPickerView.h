@@ -1,10 +1,7 @@
 //
 //  ColorPickerView.h
-//  oekaki01
-//
-//  Created by moca on 2014/01/27.
-//  Copyright (c) 2014年 moca. All rights reserved.
-//
+//  copyleft
+//  I admit the distribution and modified freely.
 
 #import <UIKit/UIKit.h>
 #import "UIViewPlus.h"
@@ -23,5 +20,4 @@
     UIView *setColorView;
     UIView *alphaView;
 }
--(NSInteger)setInteger;
 @end
