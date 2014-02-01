@@ -147,14 +147,16 @@
     UIImage *old = [[UIImage alloc]initWithCGImage:(CGImageRef)baseView.layer.contents];
     [old drawAtPoint:CGPointZero];
     CGContextBeginPath(context);
-    CGContextSetFillColorWithColor(context,[RGB(255,255,255) CGColor]);
-    CGContextSetLineWidth(context, 7.0);
-    CGContextMoveToPoint(context,0,0);
-    CGContextAddLineToPoint(context,widthPoint,0);
-    CGContextSetFillColorWithColor(context, [RGB(100,100,100) CGColor]);
+    CGContextSetStrokeColorWithColor(context,[RGB(255,255,255) CGColor]);
     CGContextSetLineWidth(context, 2.0);
-    CGContextMoveToPoint(context,widthPoint,0);
-    CGContextAddLineToPoint(context,140,0);
+    CGContextMoveToPoint(context,100,230);
+    CGContextAddLineToPoint(context,widthPoint + 100,230);
+    CGContextStrokePath(context);
+    CGContextSetStrokeColorWithColor(context, [RGB(100,100,100) CGColor]);
+    CGContextSetLineWidth(context, 2.0);
+    CGContextMoveToPoint(context,widthPoint + 100,230);
+    CGContextAddLineToPoint(context,240,230);
+    CGContextStrokePath(context);
     [baseView.layer setContents:(id)[UIGraphicsGetImageFromCurrentImageContext() CGImage]];
     UIGraphicsEndImageContext();
 }
@@ -389,10 +391,6 @@
     value = nil;
 }
 
--(NSInteger)setInteger
-{
-    return 12;
-}
 
 
 @end
